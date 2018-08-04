@@ -15,8 +15,12 @@ int main()
 	BiSerch_tree bt;
 	for (int i = 0; i < 10; i++)
 		bt.insert(A[i]);
-	cout << "´òÓ¡¶ş²æÅÅĞòÊ÷" << endl;
+	cout << endl;
+	cout << "µİ¹é´òÓ¡¶ş²æÅÅĞòÊ÷" << endl;
 	bt.walk();
+	cout << endl;
+	cout << "·Çµİ¹é´òÓ¡¶ş²æËÑË÷Ê÷" << endl;
+	bt.interative_walk();
 	cout << endl;
 	while(1)
 	{ 
@@ -32,5 +36,17 @@ int main()
 		if (p == NULL)
 			cout << "NULL" << endl;
 		else cout << p->key << endl;
+		cout << "ÊäÈëÒªÉ¾³ıµÄ¹Ø¼ü×Ö£º";
+		cin >> key;
+		bt.drop(key);
+		cout << "·Çµİ¹é´òÓ¡¶ş²æËÑË÷Ê÷" << endl;
+		bt.interative_walk();
+		cout << endl;
+		cout << "ÊäÈëÒª²åÈëµÄ¹Ø¼ü×Ö:" << endl;
+		cin >> key;
+		bt.insert(key);
+		cout << "·Çµİ¹é´òÓ¡¶ş²æËÑË÷Ê÷" << endl;
+		bt.interative_walk();
+		cout << endl;
 	}
 }

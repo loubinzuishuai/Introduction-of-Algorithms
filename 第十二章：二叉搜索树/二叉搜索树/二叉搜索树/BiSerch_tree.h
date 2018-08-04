@@ -8,6 +8,8 @@ public:
 private:
 	void tree_walk(BiNode *p); //递归按顺序输出二叉搜索树
 	BiNode* tree_search(BiNode *p, int key); //递归搜索key，并返回指向key的指针
+	void transplate(BiNode *x, BiNode *y); 
+	BiNode* minimum(BiNode *p);
 public:
 	BiNode *root;
 	BiNode* search(int key); //返回一个含有关键字key的指针
