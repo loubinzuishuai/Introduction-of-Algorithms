@@ -17,7 +17,20 @@ int main()
 		bt.insert(A[i]);
 	cout << "´òÓ¡¶ş²æÅÅĞòÊ÷" << endl;
 	bt.walk();
+	cout << endl;
 	while(1)
-	{ }
-	
+	{ 
+		cout << "ÊäÈëÒª²éÕÒµÄ¹Ø¼ü×Ö£º";
+		int key;
+		cin >> key;
+		BiNode* p = bt.search(key);
+		cout << "µİ¹éËÑË÷µÄ¹Ø¼ü×Ö£º";
+		if (p == NULL)
+			cout << "NULL" << endl;
+		else cout << p->key << endl;
+		cout << "·Çµİ¹éËÑË÷µÄ¹Ø¼ü×Ö£º";
+		if (p == NULL)
+			cout << "NULL" << endl;
+		else cout << p->key << endl;
+	}
 }

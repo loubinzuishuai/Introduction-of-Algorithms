@@ -24,7 +24,39 @@ void BiSerch_tree::tree_walk(BiNode * p) //ÓÃµİ¹é·½·¨°´Ë³Ğò´òÓ¡¶ş²æËÑË÷Ê÷
 	}
 }
 
+BiNode * BiSerch_tree::tree_search(BiNode * p, int key)
+{
+	if (p == NULL)
+		return NULL;
+	if (p->key == key)
+		return p;
+	else if (p->key > key)
+		return tree_search(p->lchild, key);
+	else
+		return tree_search(p->rchld, key);
+}
 
+
+
+BiNode * BiSerch_tree::search(int key)
+{
+	return tree_search(root, key);
+}
+
+BiNode * BiSerch_tree::interative_search(int key)
+{
+	BiNode* x = root;
+	while (x != NULL)
+	{
+		if (x->key == key)
+			return x;
+		else if (key < x->key)
+			x = x->lchild;
+		else
+			x = x->rchld;
+	}
+	return NULL;
+}
 
 void BiSerch_tree::insert(int key)
 {
