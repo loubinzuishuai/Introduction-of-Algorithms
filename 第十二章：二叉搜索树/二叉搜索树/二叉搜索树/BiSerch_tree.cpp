@@ -58,6 +58,13 @@ BiNode * BiSerch_tree::minimum(BiNode * p)
 	return p;
 }
 
+BiNode * BiSerch_tree::maximum(BiNode * p)
+{
+	while (p->rchld != NULL)
+		p = p->rchld;
+	return p;
+}
+
 
 
 BiNode * BiSerch_tree::search(int key)
@@ -154,4 +161,36 @@ void BiSerch_tree::interative_walk()
 			x = x->lchild;
 		}
 	}
+}
+
+BiNode * BiSerch_tree::successor(int key)
+{
+	BiNode *x = interative_search(key);
+	if (x->rchld != NULL)
+		return maximum(x->rchld);
+	BiNode *y = x->parent;
+	while (y != NULL)
+	{
+		if (y->lchild == x)
+			break;
+		x = y;
+		y = x->parent;
+	}
+	return y;
+}
+
+BiNode * BiSerch_tree::predecessor(int key)
+{
+	BiNode *x = interative_search(key);
+	if (x->lchild != NULL)
+		return maximum(x->lchild);
+	BiNode *y = x->parent;
+	while (y != NULL)
+	{
+		if (y->rchld == x)
+			break;
+		x = y;
+		y = x->parent;
+	}
+	return y;
 }

@@ -10,6 +10,7 @@ private:
 	BiNode* tree_search(BiNode *p, int key); //递归搜索key，并返回指向key的指针
 	void transplate(BiNode *x, BiNode *y); 
 	BiNode* minimum(BiNode *p);
+	BiNode* maximum(BiNode *p);
 public:
 	BiNode *root;
 	BiNode* search(int key); //返回一个含有关键字key的指针
@@ -18,6 +19,8 @@ public:
 	void drop(int key);
 	void walk();
 	void interative_walk();
+	BiNode* successor(int key);
+	BiNode* predecessor(int key);
 
 };
 

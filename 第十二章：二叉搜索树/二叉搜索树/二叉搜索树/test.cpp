@@ -48,5 +48,25 @@ int main()
 		cout << "非递归打印二叉搜索树" << endl;
 		bt.interative_walk();
 		cout << endl;
+		while (1)
+		{
+			cout << "输入关键字key：" << endl;
+			int key;
+			cin >> key;
+			if (key == 0)
+				break;
+			BiNode *pre = bt.predecessor(key);
+			cout << "前驱结点为：";
+			if (pre != NULL)
+				cout << pre->key << endl;
+			else
+				cout << "NULL" << endl;
+			BiNode *suc = bt.successor(key);
+			cout << "后继结点为：";
+			if (pre != NULL)
+				cout << suc->key << endl;
+			else
+				cout << "NULL" << endl;
+		}
 	}
 }
