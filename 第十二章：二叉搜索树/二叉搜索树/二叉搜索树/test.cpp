@@ -3,7 +3,7 @@
 #include <ctime>
 #include "BiSerch_tree.h"
 using namespace std;
-int main()
+/*int main()
 {
 	int A[10];
 	srand((unsigned)time(NULL));
@@ -70,3 +70,4 @@ int main()
 		}
 	}
 }
+*/
